@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Resolved tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+</body>
+<h1>Resolved tasks</h1>
+<ul>
+    <li>#1
+        <ul>
+            <li>For a document, in order to adhere to the Linked Data principles, it should respect the following rules
+                (as per <a href="https://www.w3.org/DesignIssues/LinkedData.html">Linked Data</a>):
+                <ol>
+                    <li>❌ Use URIs as names for things.
+                        <ul>
+                            <li>Indeed the document uses URIs for some things (e.g. <strong><em>Animation</em></strong>:
+                                <a
+                                    href="http://dbpedia.org/resource/Animation">http://dbpedia.org/resource/Animation</a>),
+                                but not for all of them.
+                            </li>
+                            <li> For example, to specify the genre of the movie, a text value has been used (i.e.
+                                <strong><em>"funny"</em></strong>). The rule could be respected using an URI instead:
+                                for example <a href="https://dbpedia.org/page/Fun">https://dbpedia.org/page/Fun</a>.
+                            </li>
+                            <li>In conclusion, the document does not strictly respect this rule.</li>
+                        </ul>
+                    </li>
+                    <li> ✅ Use HTTP URIs so that people can look up those names.
+                        <ul>
+                            <li>This rule is respected since HTTP URIs have been used in order to look up those names.
+                                Examples: <ul>
+                                    <li><a
+                                            href="http://dbpedia.org/resource/Animation">http://dbpedia.org/resource/Animation</a>
+                                    </li>
+                                    <li><a
+                                            href="http://www.wikidata.org/wiki/Q46855">http://www.wikidata.org/wiki/Q46855</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li> ✅ When someone looks up a URI, provide useful information, using the standards (RDF, SPARQL)
+                        <ul>
+                            <li>These URIs provide useful information using RDF standard: <ul>
+                                    <li><a
+                                            href="http://dbpedia.org/resource/Animation">http://dbpedia.org/resource/Animation</a>
+                                    </li>
+                                    <li><a
+                                            href="https://dbpedia.org/page/Hackathon">https://dbpedia.org/page/Hackathon</a>
+                                    </li>
+                                    <li><a
+                                            href="http://www.wikidata.org/wiki/Q46855">http://www.wikidata.org/wiki/Q46855</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li> ✅ Include links to other URIs so that they can discover more things.
+                        <ul>
+                            <li>Links to other URIs have been included.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li>Since the document does not respect the previously mentioned rules, it does not adhere to the Linked
+                Data principles.</li>
+            <li>Based on the previous item, 5 stars cannot be awarded to the document. However, since the document is
+                available on the web with an open license (⭐), as machine-readable structured data (⭐⭐), as
+                non-proprietary format (⭐⭐⭐) and uses RDF standard to identify things (⭐⭐⭐⭐), 4 stars can be awarded to
+                the document.</li>
+        </ul>
+    </li>
+    <li>#2
+        <ul>
+            <li>Created an RDF model for <strong><em>If it happens once it will happen twice</em></strong> chapter <ul>
+                    <li>Source-code: <strong>/src/once-twice.ttl</strong></li>
+                </ul>
+            </li>
+            <li>Created an RDF model for <strong><em>Take heed of warnings</em></strong> chapter <ul>
+                <li>Source-code: <strong>/src/heed-of-warnings.ttl</strong></li>
+            </ul></li>
+            <li>Created an RDF model for <strong><em>TBD</em></strong> chapter</li>
+        </ul>
+    </li>
+    <li>#3
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+    <li>#4
+        <ul>
+            <li></li>
+        </ul>
+    </li>
+</ul>
+
+</html>
