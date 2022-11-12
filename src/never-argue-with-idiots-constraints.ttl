@@ -1,0 +1,45 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix s: <http://www.customschema.com/rdf-schema#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+dbr:Nile_crocodile a sh:NodeShape ;
+                   sh:property [
+                        sh:path s:survivalStatus ;
+                        sh:in (s:Dead s:AliveTillTheEnd)
+                   ] ;
+                   sh:property [
+                        sh:path s:animated ;
+                        sh:in (s:FullyAnimated s:Still s:Hidden)
+                   ] ;
+                   sh:property [
+                        sh:path s:performs ;
+                        sh:minCount 1 ;
+                        sh:in (
+                            [a schema:Action ; s:type dbr:Snorting] 
+                            [a schema:Action ; s:type dbr:Standing]
+                            [a schema:Action ; s:type dbr:Looking]
+                            [a schema:Action ; s:type dbr:Throwing]
+                            [a schema:Action ; s:type dbr:Strike]
+                        )
+                   ] .
+
+dbr:Wildebeest a sh:NodeShape ;
+                sh:property [
+                    sh:path s:survivalStatus ;
+                    sh:in (s:Dead s:AliveTillTheEnd)
+                ] ;
+                sh:property [
+                    sh:path s:animated ;
+                    sh:in (s:FullyAnimated s:Still s:Hidden)
+                ] ;
+                sh:property [
+                    sh:path s:performs ;
+                    sh:minCount 1 ;
+                    sh:in (
+                        [a schema:Action ; s:type dbr:Floating] 
+                        [a schema:Action ; s:type dbr:Eating]
+                    )
+                ] .
