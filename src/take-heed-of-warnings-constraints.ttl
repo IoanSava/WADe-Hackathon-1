@@ -1,0 +1,40 @@
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s: <http://www.customschema.com/rdf-schema#> .
+@prefix ex: <http://example.com/ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+ex:human    a sh:NodeShape ;
+            sh:targetClass dbr:Man ;
+            sh:property [
+                sh:path s:status ;
+                sh:hasValue s:Unknown ;
+            ],
+            [
+                sh:path s:drawndIn ;
+                sh:hasValue [ a s:Layer ; rdfs:label "foreground layer"@en ]
+            ],
+            [
+                sh:path s:animated ;
+                sh:in (s:FullyAnimated s:Still s:Hidden)
+            ],
+            [
+                sh:path s:involvedIn ;
+                sh:hasValue dbr:Shopping 
+            ],
+            [
+                sh:path s:performs ;
+                sh:minCount 1 
+            ] .
+
+dbr:Dog a sh:NodeShape ;
+        sh:property [
+            sh:path s:animated ;
+            sh:in (s:FullyAnimated s:Still s:Hidden) ;
+        ],
+        [
+            sh:path s:performs ;
+            sh:minCount 1 ;
+        ] .
