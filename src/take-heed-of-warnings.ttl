@@ -1,0 +1,156 @@
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s: <http://www.customschema.com/rdf-schema#> .
+@prefix ex: <http://example.com/ns#> .
+
+ex:human    a dbr:Man ;
+            # rendered in a specific layer
+            s:drawndIn [ a s:Layer ; rdfs:label "foreground layer"@en ] ;
+            # this character is fully animated
+            s:animated s:FullyAnimated ;
+            s:involvedIn dbr:Shopping ;
+            s:performs [
+                a schema:Action ;
+                s:type s:Returning ;
+                s:to dbr:Car ;
+                schema:actionStatus schema:CompletedActionStatus ;
+            ] .
+
+ex:first_dog    a dbr:Dog ;
+                # rendered in a specific layer
+                s:drawndIn [ a s:Layer ; rdfs:label "foreground layer"@en ] ;
+                # this character is fully animated
+                s:animated s:FullyAnimated ;
+                s:performs [
+                    a schema:Action ;
+                    s:type dbr:Sitting ;
+                    s:in dbr:Car ;
+                    schema:actionStatus schema:ActiveActionStatus ;
+                ] .
+
+ex:first_dog    s:performs [
+                    a schema:Action ;
+                    s:type s:Barking ;
+                    s:at ex:human ;
+                    schema:actionStatus schema:CompletedActionStatus ;
+                ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type s:Jolting ;
+                schema:actionStatus schema:CompletedActionStatus ;
+            ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type dbr:Taunting ;
+                s:subject ex:first_dog ;
+                schema:actionStatus schema:CompletedActionStatus ;
+            ] .
+
+ex:first_dog    s:performs [
+                    a schema:Action ;
+                    s:type s:Barking ;
+                    s:at ex:human ;
+                    schema:actionStatus schema:CompletedActionStatus ;
+                ] .
+
+ex:first_dog    s:performs [
+                    a schema:Action ;
+                    s:type dbr:Looking ;
+                    s:at dbr:Door ;
+                    schema:actionStatus schema:CompletedActionStatus ;
+                ] .
+
+ex:first_dog    s:performs [
+                    a schema:Action ;
+                    s:type s:Pressing ;
+                    s:subject s:Switch ;
+                    schema:actionStatus schema:CompletedActionStatus ;
+                ] .
+
+ex:first_dog    s:performs [
+                    a schema:Action ;
+                    s:type s:Lowering ;
+                    s:subject dbr:Window ;
+                    schema:actionStatus schema:ActiveActionStatus ;
+                ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type s:Panicking ;
+                s:subject ex:human ;
+                schema:actionStatus schema:CompletedActionStatus ;
+            ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type s:Searching ;
+                s:for s:Key;
+                schema:actionStatus schema:CompletedActionStatus ;
+            ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type s:Opening ;
+                s:subject dbr:Car ;
+                schema:actionStatus schema:FailedActionStatus ;
+            ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type s:Breaking ;
+                s:subject dbr:Window ;
+                schema:actionStatus schema:CompletedActionStatus ;
+            ] .
+
+ex:first_dog    s:performs [
+                    a schema:Action ;
+                    s:type s:Lowering ;
+                    s:subject dbr:Window ;
+                    schema:actionStatus schema:CompletedActionStatus ;
+                ] .
+
+ex:first_dog    s:performs [
+                    a schema:Action ;
+                    s:type s:Exiting ;
+                    s:subject dbr:Car ;
+                    schema:actionStatus schema:ActiveActionStatus ;
+                ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type s:Hot-wiring ;
+                s:subject dbr:Car ;
+                schema:actionStatus schema:CompletedActionStatus ;
+            ] .
+
+ex:human    s:performs [
+                a schema:Action ;
+                s:type dbr:Driving ;
+                s:subject dbr:Car ;
+                schema:actionStatus schema:ActiveActionStatus ;
+            ] .
+
+ex:second_dog   a dbr:Dog ;
+                # rendered in a specific layer
+                s:drawndIn [ a s:Layer ; rdfs:label "foreground layer"@en ] ;
+                # this character is fully animated
+                s:animated s:FullyAnimated ;
+                s:performs [
+                    a schema:Action ;
+                    s:type s:Appearing ;
+                    s:in dbr:Car ;
+                    schema:actionStatus schema:CompletedActionStatus ;
+                ] .
+
+ex:second_dog   s:performs [
+                    a schema:Action ;
+                    s:type dbr:Growling ;
+                    s:at ex:human ;
+                    schema:actionStatus schema:ActiveActionStatus ;
+                ] .
+
+ex:human    s:survivalStatus s:Unknown .
