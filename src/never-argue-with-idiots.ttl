@@ -1,0 +1,160 @@
+@prefix s: <http://www.customschema.com/rdf-schema#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.com/ns#> .
+
+ex:crocodile a dbr:Nile_crocodile ;
+             s:animated s:Still ;
+             s:performs [
+                a schema:Action ;
+                s:type dbr:Floating ;
+                s:place dbr:River
+             ] .
+
+ex:first_wildebeest a dbr:Wildebeest ;
+                    s:drawndIn [ a s:Layer ; rdfs:label "foreground layer"@en ] ;
+                    s:animated s:FullyAnimated ;
+                    s:performs [
+                        a schema:Action ;
+                        s:type dbr:Standing ;
+                        s:place dbr:Shore
+                    ] .
+
+ex:second_wildebeest a dbr:Wildebeest ;
+                     s:drawndIn [ a s:Layer ; rdfs:label "foreground layer"@en ] ;
+                     s:animated s:FullyAnimated ;
+                     s:performs [
+                        a schema:Action ;
+                        s:type dbr:Standing ;
+                        s:place dbr:Shore
+                     ] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Looking ;
+    s:subject ex:crocodile
+] .
+
+ex:second_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Looking ;
+    s:subject ex:crocodile
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Nile_crocodile
+] .
+
+ex:second_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Log
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Nile_crocodile
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Throwing ;
+    schema:instrument dbr:Rock ;
+    s:target ex:crocodile ;
+    schema:actionStatus schema:CompletedActionStatus
+] .
+
+ex:second_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Log
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Nile_crocodile
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Strike ;
+    schema:instrument dbr:Twig ;
+    s:target ex:crocodile ;
+    schema:actionStatus schema:CompletedActionStatus
+] .
+
+ex:second_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Log
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Nile_crocodile
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Throwing ;
+    schema:instrument dbr:Water ;
+    s:target ex:crocodile ;
+    schema:actionStatus schema:CompletedActionStatus
+] .
+
+ex:first_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Jumping ;
+    s:target ex:crocodile ;
+    schema:actionStatus schema:CompletedActionStatus
+] .
+
+ex:crocodile s:animated s:FullyAnimated .
+
+ex:crocodile s:performs [
+    a schema:Action ;
+    s:type dbr:Eating ;
+    s:target ex:first_wildebeest ;
+    schema:actionStatus schema:CompletedActionStatus
+] .
+
+ex:crocodile s:animated s:Still .
+
+ex:second_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Nile_crocodile
+] .
+
+ex:third_wildebeest a dbr:Wildebeest ;
+                    s:drawndIn [ a s:Layer ; rdfs:label "foreground layer"@en ] ;
+                    s:animated s:FullyAnimated ;
+                    s:performs [
+                        a schema:Action ;
+                        s:type dbr:Standing ;
+                        s:place dbr:Shore
+                    ] .
+
+ex:third_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Looking ;
+    s:subject ex:crocodile
+] .
+
+ex:third_wildebeest s:performs [
+    a schema:Action ;
+    s:type dbr:Snorting ;
+    s:meaning dbr:Log
+] .
+
+ex:first_wildebeest s:survivalStatus s:Dead .
+ex:second_wildebeest s:survivalStatus s:AliveTillTheEnd .
+ex:third_wildebeest s:survivalStatus s:AliveTillTheEnd .
+ex:crocodile s:survivalStatus s:AliveTillTheEnd .
