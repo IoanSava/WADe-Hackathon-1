@@ -1,0 +1,69 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix s: <http://www.customschema.com/rdf-schema#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+dbr:Dog a sh:NodeShape ;
+	sh:property [
+		sh:path s:status ;
+        sh:in (s:Hungry s:Full)        
+	] ;
+	sh:property [
+		sh:path s:animated ;
+		sh:in (s:FullyAnimated s:Still s:Hidden)
+	] ;
+	sh:property [
+		sh:path s:performs ;
+		sh:minCount 1 ;
+		sh:in (
+			[a schema:Action ; s:type dbr:Running] 
+			[a schema:Action ; s:type dbr:Looking]
+			[a schema:Action ; s:type dbr:Degustation]
+			[a schema:Action ; s:type dbr:Sliding_(motion)]
+			[a schema:Action ; s:type dbr:Eating]
+			[a schema:Action ; s:type dbr:Blocking_effect]
+			[a schema:Action ; s:type dbr:Bark_(sound)]
+			[a schema:Action ; s:type dbr:Moving]
+			[a schema:Action ; s:type dbr:Crying]
+		)
+] .
+
+
+dbr:Bowl a sh:NodeShape ;
+	sh:property [
+		sh:path s:status ;
+        sh:in (s:StuckedUnderTheCabinetry s:Full s:Empty)  
+	] ;      
+	sh:property [
+		sh:path s:animated ;
+		sh:in (s:FullyAnimated s:Still s:Hidden)
+	] ;
+	sh:property [
+		sh:path s:performs ;
+		sh:minCount 1 ;
+		sh:in (
+			[a schema:Action ; s:type dbr:Waiting] 
+			[a schema:Action ; s:type dbr:Sliding_(motion)]
+			[a schema:Action ; s:type dbr:Escape]
+		)
+] .
+
+dbr:Dog_food a sh:NodeShape ;
+	sh:property [
+		sh:path s:status ;
+        sh:in (s:StuckedUnderTheCabinetry s:Full s:Empty)  
+	] ;      
+	sh:property [
+		sh:path s:animated ;
+		sh:in (s:FullyAnimated s:Still s:Hidden)
+	] ;
+	sh:property [
+		sh:path s:performs ;
+		sh:minCount 1 ;
+		sh:in (
+			[a schema:Action ; s:type dbr:Filling]
+		)
+] .
+
