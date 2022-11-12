@@ -1,0 +1,167 @@
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix schema: <http://schema.org/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix s: <http://www.customschema.com/rdf-schema#> .
+@prefix ex: <http://example.com/ns#> .
+
+
+ex:dog_bowl a dbr:Bowl ;
+            s:animated s:Still ;
+            s:performs [
+               a schema:Action ;
+               s:type dbr:Waiting ;
+               s:place dbr:Kitchen
+] .
+
+ex:dog_food a dbr:Dog_food ;
+            s:animated s:Still ;
+            s:performs [
+               a schema:Action ;
+               s:type dbr:Filling ;
+               s:subject ex:dog_bowl
+] .
+
+ex:dog a dbr:Dog ;
+            s:drawndIn [ a s:Layer ; rdfs:label "foreground layer"@en ] ;
+            s:animated s:FullyAnimated ;
+            s:performs [
+               a schema:Action ;
+               s:type dbr:Running ;
+               s:place dbr:House
+            ] ;
+            s:performs [
+               a schema:Action ;
+               s:type dbr:Looking ;
+               s:subject ex:dog_bowl
+            ] ;
+            s:performs [
+               a schema:Action ;
+               s:type dbr:Degustation ;
+               s:subject ex:dog_food
+            ] ;
+            s:performs [
+               a schema:Action ;
+               s:type dbr:Sliding_motion ;
+               s:subject dbr:Tile
+            ] ;
+            s:performs [
+               a schema:Action ;
+               s:type dbr:Eating ;
+               s:subject ex:dog_food
+] .
+
+ex:dog_bowl s:animated s:FullyAnimated ;
+         s:performs [
+               a schema:Action ;
+               s:type dbr:Sliding_motion ;
+               s:subject dbr:Tile
+] .
+
+ex:dog s:performs [
+         a schema:Action ;
+         s:type dbr:Blocking_effect ;
+         schema:instrument dbr:Cabinetry;
+         s:target ex:dog_bowl ;
+         schema:actionStatus schema:CompletedActionStatus
+      ] ;
+      s:performs [
+         a schema:Action ;
+         s:type dbr:Bark_sound;
+         s:target ex:dog_bowl 
+      ] ;
+      s:performs [
+         a schema:Action ;
+         s:type dbr:Moving ;
+         schema:instrument dbr:Toy;
+         s:target ex:dog_bowl ;
+         schema:actionStatus schema:CompletedActionStatus
+] .
+
+ex:dog_bowl s:performs [
+         a schema:Action ;
+         s:type dbr:Sliding_motion ;
+         s:subject dbr:Tile
+         ] ;
+      s:performs [
+         a schema:Action ;
+         s:type dbr:Escape ;
+         s:target dbr:Cabinetry;
+         schema:actionStatus schema:FailedActionStatus
+] .
+
+
+ex:dog s:performs [
+      a schema:Action ;
+      s:type dbr:Moving ;
+      schema:instrument dbr:Shoe;
+      s:target ex:dog_bowl ;
+      schema:actionStatus schema:CompletedActionStatus
+] .
+
+
+ex:dog_bowl s:performs [
+      a schema:Action ;
+      s:type dbr:Sliding_motion ;
+      s:subject dbr:Tile
+      ] ;
+      s:performs [
+         a schema:Action ;
+         s:type dbr:Escape ;
+         s:target dbr:Cabinetry;
+         schema:actionStatus schema:FailedActionStatus
+] .
+
+
+ex:dog s:performs [
+      a schema:Action ;
+      s:type dbr:Moving ;
+      schema:instrument dbr:Remote_control;
+      s:target ex:dog_bowl ;
+      schema:actionStatus schema:CompletedActionStatus
+] .
+
+
+ex:dog_bowl s:performs [
+      a schema:Action ;
+      s:type dbr:Sliding_motion ;
+      s:subject dbr:Tile
+   ] ;
+   s:performs [
+      a schema:Action ;
+      s:type dbr:Escape ;
+      s:target dbr:Cabinetry;
+      schema:actionStatus schema:CompletedActionStatus
+] .
+
+
+ex:dog s:performs [
+      a schema:Action ;
+      s:type dbr:Eating ;
+      s:subject ex:dog_food
+] .
+
+
+ex:dog_bowl s:performs [
+      a schema:Action ;
+      s:type dbr:Sliding_motion ;
+      s:subject dbr:Tile
+].
+
+
+ex:dog s:performs [
+      a schema:Action ;
+      s:type dbr:Blocking_effect ;
+      schema:instrument dbr:Cabinetry;
+      s:target ex:dog_bowl ;
+      schema:actionStatus schema:CompletedActionStatus
+   ] ;
+   s:performs [
+      a schema:Action ;
+      s:type dbr:Crying ;
+] .
+
+
+ex:dog s:status s:Hungry .
+ex:dog_bowl s:status s:StuckedUnderTheCabinetry .
+ex:dog_food s:status s:InStock .
